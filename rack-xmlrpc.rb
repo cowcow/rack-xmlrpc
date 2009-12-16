@@ -77,7 +77,7 @@ if $0 == __FILE__
 		a + b
 	}
 
-	Rack::Handler::WEBRick.run(
+	Rack::Handler::WEBrick.run(
 		Rack::ShowExceptions.new(
 			Rack::Lint.new( s )
 		),
