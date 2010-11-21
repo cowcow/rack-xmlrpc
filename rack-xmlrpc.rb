@@ -67,19 +67,3 @@ module Rack
 
 	end
 end
-
-if $0 == __FILE__
-	require 'rack'
-	require 'rack/showexceptions'
-
-	s = Rack::XMLRPC.new
-	s.add_handler("xmlrpc") { |a,b|
-		a + b
-	}
-
-	Rack::Handler::WEBrick.run(
-		Rack::ShowExceptions.new(
-			Rack::Lint.new( s )
-		),
-		:Port => 9292 )
-end
